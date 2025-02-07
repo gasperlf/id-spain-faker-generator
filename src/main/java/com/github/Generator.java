@@ -7,7 +7,7 @@ import com.github.vo.CustomCIFType;
 
 import java.util.Random;
 
-import static com.github.utils.UtilsGenerator.calculaControlCIF;
+import static com.github.utils.UtilsGenerator.getControlDigitCIF;
 import static com.github.utils.UtilsGenerator.getLetter;
 import static com.github.utils.UtilsGenerator.padLeft;
 
@@ -38,7 +38,7 @@ public class Generator implements NIEGenerator, NIFGenerator, CIFGenerator {
         int minValue = (int)(100 * random.nextFloat());
         int maxValue = (int)(100000 * random.nextFloat());
         String x = initialLetter + padLeft(String.valueOf(minValue), 2) + padLeft(String.valueOf(maxValue), 5);
-        return x + calculaControlCIF(x);
+        return x + getControlDigitCIF(x);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class Generator implements NIEGenerator, NIFGenerator, CIFGenerator {
         int minValue = (int)(100 * random.nextFloat());
         int maxValue = (int)(100000 * random.nextFloat());
         String x = initialLetter + padLeft(String.valueOf(minValue), 2) + padLeft(String.valueOf(maxValue), 5);
-        return x + calculaControlCIF(x);
+        return x + getControlDigitCIF(x);
 
     }
 
